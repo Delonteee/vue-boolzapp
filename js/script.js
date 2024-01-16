@@ -178,13 +178,52 @@ createApp({
 
         sendNewMessage() {
             const newMessageText = {
-                date: '12/01/2020 17:23:00',
+                date: '10/01/2020 18:44:58',
                 message: this.newMessage,
                 status: 'sent',
             };
 
             this.contacts[this.activeContact].messages.push(newMessageText);
-        }
+
+            this.newMessage = '';
+
+            setTimeout(() => {
+
+                const newResponseText = {
+                    date: '10/01/2020 18:45:00',
+                    message: 'Ok',
+                    status: 'received',
+                };
+    
+                this.contacts[this.activeContact].messages.push(newResponseText);
+
+            }, 1000);
+            
+        },
+
+        /* 
+        getTheTime() {
+            const finalDate = '';
+
+            const now = new Date();
+
+            finalDate += now.getDate().toString().padStart(2, '0');
+            finalDate += '/';
+            finalDate += (now.getMonth() + 1).toString().padStart(2, '0');
+            finalDate += '/';
+            finalDate += now.getFullYear().toString();
+            
+            finalDate += ' ';
+
+            finalDate += now.getHours().toString().padStart(2, '0');
+            finalDate += ':';
+            finalDate += now.getMinutes().toString().padStart(2, '0');
+            finalDate += ':';
+            finalDate += now.getSeconds().toString().padStart(2, '0');
+
+            return finalDate;
+        },
+        */
 
     }
 
