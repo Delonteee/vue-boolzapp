@@ -168,7 +168,13 @@ createApp({
                 }
             ]            
         };
+    },
+
+    methods: {
+        updateActiveChat(index) {
+            console.log('Cliccato su contatto', index);
+            this.activeContact = index;
+        }
     }
-
-
+    
 }).mount('#app');

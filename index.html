@@ -70,7 +70,8 @@
                             class="contact-container"
                             :class="{
                                 'active': i == activeContact
-                            }">
+                            }"
+                            @click="updateActiveChat(i)">
 
                             <img :src="contact.avatar" :alt="contact.name">
                             <div>
@@ -119,7 +120,7 @@
                     <main>
 
                         <div 
-                            v-for="(singleMessage, i ) in contacts[activeContact].messages" 
+                            v-for="(singleMessage, i) in contacts[activeContact].messages" 
                             class="single-message-container"
                             :class="{
                                 'sent' : singleMessage.status == 'sent',
@@ -154,9 +155,8 @@
                             </button>
                         </div>
                     </footer>
+
                 </section>
-
-
             </div>
         </main>
         
