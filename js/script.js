@@ -174,7 +174,18 @@ createApp({
         updateActiveChat(index) {
             console.log('Cliccato su contatto', index);
             this.activeContact = index;
+        },
+
+        sendNewMessage() {
+            const newMessageText = {
+                date: '12/01/2020 17:23:00',
+                message: this.newMessage,
+                status: 'sent',
+            };
+
+            this.contacts[this.activeContact].messages.push(newMessageText);
         }
+
     }
-    
+
 }).mount('#app');
